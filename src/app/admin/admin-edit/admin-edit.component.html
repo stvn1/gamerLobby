@@ -1,0 +1,34 @@
+<form (submit)="update(updateForm)" #updateForm="ngForm" novalidate>
+    <h2>Update User</h2>
+    <label for="username">Username:</label> 
+        <input id="username" type="text" name="username" [(ngModel)]="user.username" #username="ngModel" ngModel required>
+        <div class="error" [hidden]="username.valid || username.pristine">Username Required</div>
+    <label for="level">Level:</label>
+    <select id="level" name="level" [(ngModel)]="user.level" #level="ngModel" ngModel required>
+        <option value="{{user.level}}" disabled selected>{{user.level}}</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select> 
+    <label for="mode">Mode:</label>
+        <input id="mode" type="text" name="mode" [(ngModel)]="user.mode" #mode="ngModel" ngModel required><br>
+        <div class="error" [hidden]="mode.valid || mode.pristine">Mode Required</div>
+    <label for="time">Time:</label>
+        <input id="time" type="text" name="time" [(ngModel)]="user.time" #time="ngModel" ngModel required><br>
+        <div class="error" [hidden]="time.valid || time.pristine">Time Required</div>
+    <label>Recently Played:</label>
+    <select name="game" [(ngModel)]="user.game" #game="ngModel" ngModel required>
+        <option value="" disabled selected>- Select a game -</option>
+        <option *ngFor="let game of gameService.games" value="{{game.title}}">{{game.title}}</option>
+    </select>
+    <label for="status">Status:</label> 
+    <select id="status" name="status" [(ngModel)]="user.status" #status="ngModel" ngModel required>
+        <option value="" disabled selected>- Select a status -</option>
+        <option value="Available">available</option>
+        <option value="Unavailable">unavailable</option>
+    </select>
+    <button type="submit" [disabled]="!updateForm.form.valid">Update</button>
+    <button (click)="cancel()">Cancel</button>
+</form>
