@@ -2,29 +2,6 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
-## Instructions
-clone repo . 
--npm install in root directory .    
--another terminal cd into backend and npm install .      
--npm run start from root directory .  
--nodemon server.js from backend .  
-
--on mac:
--only npm run start from root directory
-
-## Login info
--usernmae:admin . 
---password:admin . 
-
-## Members
-
-Esteban Guzman StudentID:101028810 .  
-Serhii Kravtsov StudentID:101132205 . 
-
-David Wieczorek Student ID:101148080 .
-
-
-
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
